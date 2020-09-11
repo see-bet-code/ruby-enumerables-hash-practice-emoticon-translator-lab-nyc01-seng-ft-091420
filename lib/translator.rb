@@ -25,5 +25,6 @@ def get_english_meaning(file_path, input)
   lib.each { |meaning, emoticons|
     binding.pry
     #return meaning if lib[meaning][:japanese] == input
+    return meaning
   }
 end
