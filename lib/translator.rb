@@ -5,8 +5,8 @@ def load_library(file_path)
   # code goes here
   hash = {}
   lib = YAML.load_file(file_path)
-  lib.each { | name, versions |
-    hash[name] = {
+  lib.each { | meaning, versions |
+    hash[meaning] = {
       :english => versions[0],
       :japanese => versions[1]
     }
@@ -14,13 +14,16 @@ def load_library(file_path)
   hash
 end
 
-def get_japanese_emoticon(file_path, emoticon)
+def get_japanese_emoticon(file_path, input)
   # code goes here
   emoticons = load_library(file_path)
 end
 
-def get_english_meaning(file_path, emoticon)
+def get_english_meaning(file_path, input)
   # code goes here
-  emoticons = load_library(file_path)
-  
+  lib = load_library(file_path)
+  lib.each { |meaning, emoticons|
+    if emoticons[meaning][emoticons[1]] == input
+      return meaning
+  }
 end
