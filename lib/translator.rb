@@ -17,7 +17,11 @@ end
 
 def get_japanese_emoticon(file_path, input)
   # code goes here
-  emoticons = load_library(file_path)
+  lib = load_library(file_path)
+  lib.each { |meaning, emoticons|
+    return meaning if emoticons[:english] == input
+  }
+  p "Sorry, that emoticon was not found"
 end
 
 def get_english_meaning(file_path, input)
