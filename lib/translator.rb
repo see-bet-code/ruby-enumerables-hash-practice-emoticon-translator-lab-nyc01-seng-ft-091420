@@ -6,6 +6,7 @@ def load_library(file_path)
   emoticons = YAML.load_file(file_path)
   emoticons
   binding.pry
+  puts file_path
 end
 
 def get_japanese_emoticon
