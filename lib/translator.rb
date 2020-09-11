@@ -8,7 +8,7 @@ def load_library(file_path)
   lib.each { | name, versions |
     emoticons[name] = {
       :english => versions[0],
-      :japanese => versions[1] if versions.size > 1
+      :japanese => versions[1]
     }
   }
   emoticons
