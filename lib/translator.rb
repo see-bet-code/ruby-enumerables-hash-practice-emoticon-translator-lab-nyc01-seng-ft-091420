@@ -27,4 +27,5 @@ def get_english_meaning(file_path, input)
     #return meaning if lib[meaning][:japanese] == input
     return meaning
   }
+  meaning
 end
